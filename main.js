@@ -45,3 +45,26 @@ function submitComment() {
   nameField.value = '';
   commentField.value = '';
 }
+
+// functionality for revealing hidden transcript when button is clicked
+// Get the button and the transcript element
+const toggleButton = document.getElementById('toggleButton');
+const hiddenTranscript = document.getElementById('hiddenTranscript');
+
+// Add a click event listener to the button
+toggleButton.addEventListener('click', function() {
+  // Toggle the visibility of the transcript
+  if (hiddenTranscript.style.display === 'none') {
+    hiddenTranscript.style.display = 'block'; // Show the transcript
+  } else {
+    hiddenTranscript.style.display = 'none'; // Hide the transcript
+  }
+});
+
+// Adds the option to use the Enter/Return key to select interactive elements
+document.onkeydown = (e) => {
+  // The Enter/Return key
+  if (e.key === "Enter") {
+    document.activeElement.click();
+  }
+};
